@@ -12,11 +12,25 @@ await queryInterface.createTable('ratings', {
 
 
 
-  rating: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    unique: true
+    userid:{
+      type: DataTypes.INTEGER
     },
+
+    movieid:{
+      type: DataTypes.INTEGER
+    },
+
+  
+    rating: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      unique: true
+      },
+  
+
+
+
+
      
   })
   },

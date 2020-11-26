@@ -21,21 +21,33 @@ const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   const Rating = sequelize.define('Rating', {
 
-id: {
-type: Sequelize.INTEGER,
-allowNull: false,
-autoIncrement: true,
-primaryKey: true
-},
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
+
+    userid:{
+      type: DataTypes.INTEGER
+    },
+
+    movieid:{
+      type: DataTypes.INTEGER
+    },
 
 
-    title: {
+
+    rating: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
+
+
   });
 
- 
+
 
   return Rating;
 };

@@ -43,19 +43,27 @@ module.exports = (sequelize, DataTypes) => {
   const Movie = sequelize.define('Movie', {
 
 id: {
-type: Sequelize.INTEGER(11),
+type: DataTypes.INTEGER(11),
 allowNull: false,
 autoIncrement: true,
 primaryKey: true
 },
 
+movieid:{
+  type: DataTypes.INTEGER(11)
+},
 
     title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
+    genres:{
+      type: DataTypes.STRING,
+    }
+  
 
+  });
+ 
  
 
   return Movie;
