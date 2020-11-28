@@ -1,4 +1,5 @@
 const Sequelize = require("sequelize");
+const links = require("../models/links");
 
 const Link = require('../models').Link;
 
@@ -14,4 +15,21 @@ module.exports = {
       .then((link) => res.status(201).send(link))
       .catch((error) => res.status(400).send(error));
   },
+
+
+  list(req, res) {
+    return Link
+      .findAll()
+      .then(links => {
+        res.status(200).send(links)
+        //console.log("All Movies:", JSON.stringify(movies));
+      })
+
+      .catch((error) => res.status(400).send(error));
+  },
+
+
+
+
+
 } 

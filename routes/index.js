@@ -17,8 +17,16 @@ app.post('/api/moviecreate', moviesController.create);
 app.get('/api/moviesall', moviesController.list);
 
 app.post('/api/ratingcreate', ratingController.create);
+app.get('/api/ratingall', moviesController.list);
+
+
+
 app.post('/api/linkcreate', linksController.create);
+app.get('/api/linkall', moviesController.list);
+
+
 app.post('/api/tagcreate', tagsController.create);
+app.get('/api/tagall', moviesController.list);
 
 }
 

@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes)=>{
 
   Rating.associate = (models)=>{
     Rating.belongsTo(models.Movie, {
-      foreignkey : 'movieid',
+      foreignkey : 'movieId',
       onDelete : 'CASECADE'
 
     })

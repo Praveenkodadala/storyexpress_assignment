@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes)=>{
   Movie.associate = (models)=>{
   
     Movie.hasMany(models.Rating, {
-      foreignkey :'movieID',
-      as : 'rating',
+      foreignkey :'movieId',
+      as : 'ratings',
     })
 
   }
