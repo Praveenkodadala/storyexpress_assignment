@@ -10,38 +10,26 @@ module.exports = {
         type: Sequelize.INTEGER
       },
 
+      // movieid: {
+      //   type: Sequelize.INTEGER(11)
+      // },
 
-
-      movieid:{
-        type: DataTypes.INTEGER(11)
+      title: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       
-          title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-          },
-          genres:{
-            type: DataTypes.STRING,
-          },
-      
-      
-
-      // content: Sequelize.STRING(300),
-      // ratingId: Sequelize.INTEGER,
-
-
-      createdAt: {
+      genres: {
+        type: Sequelize.STRING,
         allowNull: false,
-        type: Sequelize.DATE
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
+
+      createdAt: Sequelize.DATE,
+      updatedAt: Sequelize.DATE
+
     });
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('movies');
   }
 };
-

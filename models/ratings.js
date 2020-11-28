@@ -1,53 +1,35 @@
-// const Sequelize = require("sequelize");
-
-// module.exports = sequelize.define("Rating", {
-// id: {
-// type: Sequelize.INTEGER(11),
-// allowNull: false,
-// autoIncrement: true,
-// primaryKey: true
-// },
-// rating: {
-// type: Sequelize.INTEGER,
-// allowNull: false,
-// unique: true
-// },
-
-// });
+'use strict';
 
 
-const Sequelize = require("sequelize");
 
-module.exports = (sequelize, DataTypes) => {
+
+module.exports = (sequelize, DataTypes)=>{
+
   const Rating = sequelize.define('Rating', {
-
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true
-    },
-
+    
     userid:{
-      type: DataTypes.INTEGER
+   type : DataTypes.INTEGER,
+   allowNull : false,
     },
 
-    movieid:{
-      type: DataTypes.INTEGER
-    },
+    rating : {
+      type : DataTypes.INTEGER,
+      allowNull : false,
+    }
 
 
-
-    rating: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+  } );
 
 
+  Rating.associate = (models)=>{
+    Rating.belongsTo(models.Movie, {
+      foreignkey : 'movieid',
+      onDelete : 'CASECADE'
 
-  });
+    })
+
+  }
 
 
-
-  return Rating;
-};
+return Rating;
+}

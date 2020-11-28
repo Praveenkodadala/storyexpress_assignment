@@ -8,26 +8,19 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      movieid:{
+      movieid: {
         type: Sequelize.INTEGER(11),
       },
-      imdbid:{
+      imdbid: {
         type: Sequelize.INTEGER(11),
       },
-      tmdbid:{
+      tmdbid: {
         type: Sequelize.INTEGER(11),
       },
-      complete: {
-        type: Sequelize.BOOLEAN
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
+      
+      createdAt: Sequelize.DATE,
+      updatedAt: Sequelize.DATE
+
     });
   },
   down: async (queryInterface, Sequelize) => {
